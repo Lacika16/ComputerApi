@@ -1,15 +1,21 @@
 [
   {
-    "ContainingType": "Computer1Api.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "Computer1Api.Controllers.OsController",
+    "Method": "Post",
+    "RelativePath": "api/Os",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "createOsDto",
+        "Type": "Computer1Api.Models.CreateOsDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Computer1Api.WeatherForecast, Computer1Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Computer1Api.Models.O",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -17,7 +23,6 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    ]
   }
 ]

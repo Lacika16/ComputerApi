@@ -1,4 +1,7 @@
 
+using Computer1Api.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace Computer1Api
 {
     public class Program
@@ -6,6 +9,12 @@ namespace Computer1Api
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<ComputerContext>(option =>
+            {
+                var connectionString = builder.Configuration.GetConnectionString("MySql");
+                option.UseMySQL(connectionString);
+            });
 
             // Add services to the container.
 
