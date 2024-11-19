@@ -39,5 +39,16 @@ namespace Computer1Api.Controllers
         {
             return Ok( await computerContext.Os.ToListAsync());
         }
+        [HttpGet]
+
+        public async Task<ActionResult<O>> GetById(Guid id)
+        {
+            var os = await computerContext.Os.FirstOrDefaultAsync(o => o.Id == id);
+            if (os != null)
+            {
+                return Ok(os);
+            }
+            return BadRequest();
+        }
     }
 }
