@@ -39,7 +39,7 @@ namespace Computer1Api.Controllers
         {
             return Ok( await computerContext.Os.ToListAsync());
         }
-        [HttpGet]
+        [HttpGet("{id}")]
 
         public async Task<ActionResult<O>> GetById(Guid id)
         {
@@ -48,7 +48,23 @@ namespace Computer1Api.Controllers
             {
                 return Ok(os);
             }
-            return BadRequest();
+            return BadRequest( new {message = "Nincs találat"});
         }
+
+        [HttpPut("{id}")]
+
+        public async Task<ActionResult<O>> Put(UpdateOsDto updateOsDto, Guid id)
+        {
+            var existingOs = await computerContext.Os.FirstOrDefaultAsync(O => O.Id == id);
+            if (existingOs != null)
+            {
+                existingOs.Name = updateOsDto.Name;
+                computerContext.Os.Update(existingOs);
+                await computerContext.SaveChangesAsync();
+                return Ok(existingOs);
+            }
+            return BadRequest(new { message = "Nincs találat" });
+        }
+
     }
 }

@@ -124,3 +124,4 @@ C:\Users\Tanulo\Git\Computer1Api\Computer1Api\bin\Debug\net8.0\runtimes\win-x64\
 C:\Users\Tanulo\Git\Computer1Api\Computer1Api\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
 C:\Users\Tanulo\Git\Computer1Api\Computer1Api\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 C:\Users\Tanulo\Git\Computer1Api\Computer1Api\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\Tanulo\Git\Computer1Api\Computer1Api\obj\Debug\net8.0\Computer1Api.sourcelink.json

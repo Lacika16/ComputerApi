@@ -24,5 +24,51 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "Computer1Api.Controllers.OsController",
+    "Method": "Get",
+    "RelativePath": "api/Os",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Computer1Api.Models.O",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Computer1Api.Controllers.OsController",
+    "Method": "GetById",
+    "RelativePath": "api/Os/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Computer1Api.Models.O",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
