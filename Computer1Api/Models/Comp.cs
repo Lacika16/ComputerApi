@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Computer1Api.Models;
 
@@ -18,6 +19,7 @@ public partial class Comp
     public DateTime? CreatedTime { get; set; }
 
     public Guid? OsId { get; set; }
+    [JsonIgnore]
 
     public virtual O? Os { get; set; }
 }

@@ -27,7 +27,7 @@ namespace Computer1Api.Controllers
             };
             if (os != null) 
             { 
-                await computerContext.Os.AddAsync(os);
+                await computerContext.Osystem.AddAsync(os);
                 await computerContext.SaveChangesAsync();
                 return StatusCode(201, os);
             
@@ -37,13 +37,13 @@ namespace Computer1Api.Controllers
         [HttpGet]
         public async Task<ActionResult<O>> Get()
         {
-            return Ok( await computerContext.Os.ToListAsync());
+            return Ok( await computerContext.Osystem.ToListAsync());
         }
         [HttpGet("{id}")]
 
         public async Task<ActionResult<O>> GetById(Guid id)
         {
-            var os = await computerContext.Os.FirstOrDefaultAsync(o => o.Id == id);
+            var os = await computerContext.Osystem.FirstOrDefaultAsync(o => o.Id == id);
             if (os != null)
             {
                 return Ok(os);
@@ -55,11 +55,11 @@ namespace Computer1Api.Controllers
 
         public async Task<ActionResult<O>> Put(UpdateOsDto updateOsDto, Guid id)
         {
-            var existingOs = await computerContext.Os.FirstOrDefaultAsync(O => O.Id == id);
+            var existingOs = await computerContext.Osystem.FirstOrDefaultAsync(O => O.Id == id);
             if (existingOs != null)
             {
                 existingOs.Name = updateOsDto.Name;
-                computerContext.Os.Update(existingOs);
+                computerContext.Osystem.Update(existingOs);
                 await computerContext.SaveChangesAsync();
                 return Ok(existingOs);
             }
@@ -70,15 +70,23 @@ namespace Computer1Api.Controllers
 
         public async Task<ActionResult<O>>Delete(Guid id)
         {
-            var os = await computerContext.Os.FirstOrDefaultAsync(os => os.Id == id);
+            var os = await computerContext.Osystem.FirstOrDefaultAsync(os => os.Id == id);
             if (os != null)
             {
-                computerContext.Os.Remove(os);
+                computerContext.Osystem.Remove(os);
                 await computerContext.SaveChangesAsync();
                 return Ok(new {message = "Nincs találat"});
             }
             return NotFound();
         }
+
+        [HttpGet("withAllComputer")]
+
+        public async Task<ActionResult<O>> GetWithAllComputer()
+        {
+            return Ok(await computerContext.Osystem.Include(os => os.Comps).ToListAsync());
+        }
+
 
 
     }

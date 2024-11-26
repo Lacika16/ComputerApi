@@ -26,6 +26,26 @@
     ]
   },
   {
+    "ContainingType": "Computer1Api.Controllers.ComputerController",
+    "Method": "Get",
+    "RelativePath": "computer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Computer1Api.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Computer1Api.Controllers.OsController",
     "Method": "Post",
     "RelativePath": "osystem",
@@ -142,6 +162,26 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "Computer1Api.Models.O",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Computer1Api.Controllers.OsController",
+    "Method": "GetWithAllComputer",
+    "RelativePath": "osystem/withAllComputer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "Computer1Api.Models.O",

@@ -17,7 +17,7 @@ public partial class ComputerContext : DbContext
 
     public virtual DbSet<Comp> Comps { get; set; }
 
-    public virtual DbSet<O> Os { get; set; }
+    public virtual DbSet<O> Osystem { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
