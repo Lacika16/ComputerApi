@@ -1,8 +1,34 @@
 [
   {
+    "ContainingType": "Computer1Api.Controllers.ComputerController",
+    "Method": "Post",
+    "RelativePath": "computer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createCompDto",
+        "Type": "Computer1Api.Models.CreateCompDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Computer1Api.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Computer1Api.Controllers.OsController",
     "Method": "Post",
-    "RelativePath": "api/Os",
+    "RelativePath": "osystem",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -28,7 +54,7 @@
   {
     "ContainingType": "Computer1Api.Controllers.OsController",
     "Method": "Get",
-    "RelativePath": "api/Os",
+    "RelativePath": "osystem",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -48,8 +74,65 @@
   {
     "ContainingType": "Computer1Api.Controllers.OsController",
     "Method": "GetById",
-    "RelativePath": "api/Os/{id}",
+    "RelativePath": "osystem/{id}",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Computer1Api.Models.O",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Computer1Api.Controllers.OsController",
+    "Method": "Put",
+    "RelativePath": "osystem/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateOsDto",
+        "Type": "Computer1Api.Models.UpdateOsDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Computer1Api.Models.O",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Computer1Api.Controllers.OsController",
+    "Method": "Delete",
+    "RelativePath": "osystem/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
